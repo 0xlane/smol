@@ -1,11 +1,15 @@
+{{ $fullUrl := printf "%s%s" .Page.Permalink .Destination }}
+{{ if or (strings.HasPrefix $fullUrl "http://") (strings.HasPrefix $fullUrl "https://") }}
+  {{ $fullUrl = .Destination }}
+{{ end }}
+
 {{ if .Title }}
 <figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
+  <img src="{{ $fullUrl | safeURL }}" alt="{{ .Text }}" />
   <figcaption>{{ .Title }}</figcaption>
 </figure>
 {{ else }}
 <figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
+  <img src="{{ $fullUrl | safeURL }}" alt="{{ .Text }}" />
 </figure>
 {{ end }}
-
