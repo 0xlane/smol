@@ -1,10 +1,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="{{ .Site.Params.description }}"
-  />
+  <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}" />
+  <meta name="description" content="{{ if .Params.Description }}{{ .Params.Description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}{{ .Title }}{{ end }}" />
   {{ if (eq .Title .Site.Title) }}
     {{ with $title := .Title }}
       <title>{{ . }}</title>
