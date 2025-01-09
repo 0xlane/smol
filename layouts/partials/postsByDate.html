@@ -1,9 +1,4 @@
-{{- $pages := .Data.Pages -}}
-{{- if eq .RelPermalink "/posts/" -}}
-  {{- $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
-{{- end -}}
-
-{{ range $pages.GroupByDate "2006" }}
+{{ range .Data.Pages.GroupByDate "2006" }}
   <h3>{{ .Key }}</h3>
   <ul id="postsByDate">
     {{ range .Pages }}

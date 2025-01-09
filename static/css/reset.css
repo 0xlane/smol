@@ -7,8 +7,8 @@ html {
   --fontcolor: #000;
   --linkcolor: #00e;
   --visitedcolor: #551a8b;
-  --precolor: #fff;
-  --prebgcolor: #000;
+  --precolor: hsl(224, 10%, 23%);
+  --prebgcolor: hsl(224, 20%, 94%);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -36,10 +36,10 @@ a:link {
   color: var(--linkcolor);
 }
 a:visited {
-  color: var(--visitedcolor);
+  color: var(--linkcolor);
 }
 a:active {
-  color: var(--visitedcolor);
+  color: var(--linkcolor);
 }
 h1,h2,h3 {
   line-height: 1.2;
@@ -47,7 +47,9 @@ h1,h2,h3 {
 p > code {
   color: var(--precolor);
   background: var(--prebgcolor);
-  padding: 2px;
+  margin-block: -.125rem;
+  padding: .125rem .375rem;
+  font-weight: bold;
 }
 pre {
   color: var(--precolor);

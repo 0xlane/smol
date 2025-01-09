@@ -4,6 +4,14 @@
       <h1 class="title">{{ .Title }}</h1>
       {{ with .Params.subtitle }}<h3 class="subtitle">{{ . }}</h3>{{ end }}
       {{ partial "postMetaDetailed.html" . }}
+
+      {{- if in .TableOfContents "li" -}}
+      <fieldset class="toc"> 
+        <legend>目录</legend>
+        {{ .TableOfContents }}
+      </fieldset>
+      {{- end -}}
+
       <div class="content">{{ .Content }}</div>
     </article>
   </main>

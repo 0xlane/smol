@@ -63,13 +63,16 @@ div.post-meta {
     font-size: 25px;
   }
 }
-#postsByDate  {
+#postsByDate, #section {
   list-style: none;
 }
 #postsByDate .date {
   width: 60px;
 }
-#postsByDate div, #postsInOneGroup div {
+#section .date {
+  width: 90px;
+}
+#postsByDate div, #postsInOneGroup div, #section div {
   display: inline-block;
 }
 #terms {
@@ -81,4 +84,38 @@ div.post-meta {
   display: inline-block;
   margin: 2px;
   padding: 8px;
+}
+
+article .content table {
+  border-collapse: collapse;
+  width:100%;
+  border:1px solid #c6c6c6 !important;
+  margin-bottom:20px;
+}
+article .content table th {
+  border-collapse: collapse;
+  border-right:1px solid #c6c6c6 !important;
+  border-bottom:1px solid #c6c6c6 !important;
+  background-color:#dbedf3c2 !important; 
+  padding:5px 9px;
+  text-align:center;
+}
+article .content table td {
+  border-collapse: collapse;
+  border-right:1px solid #c6c6c6 !important;
+  border-bottom:1px solid #c6c6c6 !important; 
+  padding:5px 9px;
+  text-align:center;
+  word-break: break-all;
+}
+article .content table tr:nth-child(odd){
+  background-color:#fff !important; 
+}
+article .content table tr:nth-child(even){
+  background-color: #f8f8f8 !important;
+}
+
+.toc {
+  margin-top: 15px;
+  border: dotted;
 }

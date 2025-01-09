@@ -1,6 +1,10 @@
 {{ define "main" }}
-  <main id="archive">
+  <article id="archive">
     {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
-    {{ partial "postsByDate.html" . }}
+    {{ with .Content }}<article><div class="content">{{ . }}</div></article><hr>{{ end }}
+    {{ partial "section.html" . }}
+    {{- if eq .RelPermalink "/posts/" -}}
+    <hr>{{ partial "allPostsByDate.html" . }}
+    {{- end -}}
   </main>
 {{ end }}
