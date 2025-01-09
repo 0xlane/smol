@@ -1,13 +1,13 @@
-<!-- <article> -->
-	<li><time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time> - <a href="{{ .Permalink }}">{{ .Title }}</a></li>
-	<!-- <b><time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time></b> -->
-	<!-- {{ range .Params.tags }} -->
-	<!-- <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> -->
-	<!-- {{ end }} -->
-	<!-- <div>
-		{{ .Summary }}
-		{{ if .Truncated }}
-			<a href="{{ .Permalink }}">Read more...</a>
-		{{ end }}
-	</div> -->
-<!-- </article> -->
+<article class="summary">
+  <a href="{{ .Permalink }}">
+    <h1 class="title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<h3 class="subtitle">{{ . }}</h3>{{ end }}
+  </a>
+  {{ partial "postMeta.html" . }}
+  <div class="content">
+    <p>{{ .Summary }}</p>
+    {{ if .Truncated }}
+      <a href="{{ .Permalink }}">Read more...</a>
+    {{ end }}
+  </div>
+</article>
