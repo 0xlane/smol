@@ -12,7 +12,9 @@
     data-input-position="{{ default "bottom" .Site.Params.Giscus.inputPosition }}"
     data-theme="{{ default "preferred_color_scheme" .Site.Params.Giscus.theme }}"
     data-lang="{{ default "zh-CN" .Site.Params.Giscus.lang }}"
-    data-loading="{{ default "lazy" .Site.Params.Giscus.loading }}"
+    {{- if .Site.Params.Giscus.lazyLoading }}
+    data-loading="lazy"
+    {{ end -}}
     crossorigin="{{ default "anonymous" .Site.Params.Giscus.crossorigin }}"
     async>
 </script>
