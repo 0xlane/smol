@@ -2,4 +2,4 @@
 {{- if not (urls.Parse .Destination).IsAbs }}
 {{- $u = urls.JoinPath "/" .Page.File.Dir .Destination -}}
 {{ end -}}
-<a href="{{ $u | safeURL }}" {{- with .Title }} title="{{ . }}"{{ end -}}>{{- with .Text }}{{ . }}{{ end -}}</a>
+<a href="{{ $u | safeURL }}" {{- if (urls.Parse $u).IsAbs }}rel="external nofollow" target="_blank"{{ end -}} {{- with .Title }} title="{{ . }}"{{ end -}}>{{- with .Text }}{{ . }}{{ end -}}</a>

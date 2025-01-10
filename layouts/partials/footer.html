@@ -6,7 +6,7 @@
       <br />
       {{ range $i, $e := .Site.Params.social }}
         {{ if $i }} | {{ end }}
-        <a href="{{ .url }}">{{ .name }}</a>
+        <a href="{{ .url }}" rel="external nofollow" target="_blank">{{ .name }}</a>
       {{ end }}
     </p>
   {{ end }}
