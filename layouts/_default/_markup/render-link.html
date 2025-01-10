@@ -1,0 +1,5 @@
+{{- $u := .Destination -}}
+{{- if not (urls.Parse .Destination).IsAbs }}
+{{- $u = urls.JoinPath "/" .Page.File.Dir .Destination -}}
+{{ end -}}
+<a href="{{ $u | safeURL }}" {{- with .Title }} title="{{ . }}"{{ end -}}>{{- with .Text }}{{ . }}{{ end -}}</a>
