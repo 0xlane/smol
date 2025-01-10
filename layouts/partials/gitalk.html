@@ -1,4 +1,4 @@
-{{ if .Site.Params.Gitalk.enable }}
+{{- if .Site.Params.Gitalk.enable }}
 <hr />
 <div id="gitalk-container"></div>
 <link
@@ -27,4 +27,4 @@
     gitalk.render("gitalk-container");
   })();
 </script>
-{{ end }}
+{{ end -}}
