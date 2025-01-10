@@ -1,31 +1,40 @@
 <header>
   <div id="brand">
     <a class="favicon-icon-link" href="{{ .Site.BaseURL }}">
-      <img
+      {{- $iconFile := default "images/brandIcon.svg" .Site.Params.brandIconFile -}}
+      {{- $isSvg := strings.Contains $iconFile ".svg" -}}
+      {{- if $isSvg }}
+      <object
         class="favicon-icon"
-        src="{{ default "images/brandIcon.svg" .Site.Params.brandIconFile | relURL }}"
-      />
+        type="image/svg+xml"
+        data="{{ $iconFile | relURL }}"
+        role="img"
+        style="pointer-events: none"
+      ></object>
+      {{ else }}
+      <img class="favicon-icon" src="{{ $iconFile | relURL }}" />
+      {{ end -}}
     </a>
     <div class="text">
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <h3>{{ default "Description about Blog Author" .Site.Params.subtitle }}</h3>
+      <h3>
+        {{ default "Description about Blog Author" .Site.Params.subtitle }}
+      </h3>
     </div>
   </div>
   <nav>
     <div class="pc-nav">
-    {{ with .Site.Menus.main }}
-      {{ range $index, $value := . }}
-        {{ if $index }}<span class="sep">|</span>{{ end }}
-        <a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>
-      {{ end }}
-    {{ end }}
+      {{ with .Site.Menus.main }} {{ range $index, $value := . }} {{ if $index
+      }}<span class="sep">|</span>{{ end }}
+      <a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>
+      {{ end }} {{ end }}
     </div>
     <div class="phone-nav">
-      {{- with .Site.Menus.main }}
-        {{- range $index, $value := . }}
-        <a href="{{ .URL | relURL }}"><b><span class="icon iconfont {{ .Pre }}"></span></b></a>
-        {{ end -}}
-      {{ end -}}
+      {{- with .Site.Menus.main }} {{- range $index, $value := . }}
+      <a href="{{ .URL | relURL }}"
+        ><b><span class="icon iconfont {{ .Pre }}"></span></b
+      ></a>
+      {{ end -}} {{ end -}}
     </div>
   </nav>
   <hr />
