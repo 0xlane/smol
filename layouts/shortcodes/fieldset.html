@@ -1,0 +1,7 @@
+{{- $class := cond .IsNamedParams (.Get "class") (.Get 0) -}}
+{{- $legend := cond .IsNamedParams (.Get "legend") (.Get 1) -}}
+
+<fieldset class="{{ $class }}"> 
+<legend>/* {{ $legend }} */</legend>
+{{ .Inner | markdownify }}
+</fieldset>

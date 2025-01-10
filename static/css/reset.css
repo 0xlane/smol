@@ -44,7 +44,7 @@ a:active {
 h1,h2,h3 {
   line-height: 1.2;
 }
-p > code {
+p > code, li > code {
   color: var(--precolor);
   background: var(--prebgcolor);
   margin-block: -.125rem;

@@ -1,6 +1,4 @@
-{{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
-
-{{ range $pages.GroupByDate "2006" }}
+{{ range .RegularPagesRecursive.GroupByDate "2006" }}
   <h3>{{ .Key }}</h3>
   <ul id="postsByDate">
     {{ range .Pages }}

@@ -115,6 +115,10 @@ article .content table tr:nth-child(even){
   background-color: #f8f8f8 !important;
 }
 
+article .content p, article .content li {
+  line-height: 1.5;
+}
+
 .toc {
   margin-top: 15px;
   border: dotted;

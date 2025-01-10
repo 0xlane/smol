@@ -1,5 +1,5 @@
 <ul id="section">
-{{ range .Data.Pages }}
+{{ range .Sections }}
     <li>
     <div class="date">
         {{ .Date.Format (default "2016-01-01" .Site.Params.dateFmt) }}
