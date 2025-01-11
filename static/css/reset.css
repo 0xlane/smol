@@ -1,5 +1,5 @@
 html {
-  overflow-y: scroll
+  overflow-y: scroll;
 }
 :root {
   --bgcolor: #f8f9fa;
@@ -36,7 +36,6 @@ body {
 }
 a {
   text-decoration: none;
-  overflow-wrap: anywhere;
 }
 a:hover {
   text-decoration: underline;
