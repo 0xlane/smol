@@ -10,7 +10,6 @@
 header {
   font-family: -apple-system, system-ui, "JetBrains Mono", "Symbols Nerd Font", BlinkMacSystemFont, monospace;
   justify-items: center;
-  -webkit-justify-items: center;
 }
 #brand {
   display: flex;
@@ -40,6 +39,7 @@ footer {
 }
 header nav {
   margin: 15px 0;
+  text-align: center;
 }
 header nav .sep {
   margin: 0 3.5px;
@@ -62,7 +62,6 @@ div.post-meta {
   }
   header {
     justify-items: unset;
-    -webkit-justify-items: unset;
   }
   #brand {
     flex-direction: row;
@@ -76,6 +75,9 @@ div.post-meta {
   }
   #brand h3 {
     font-size: 25px;
+  }
+  header nav {
+    text-align: unset;
   }
 }
 #postsByDate, #section {
