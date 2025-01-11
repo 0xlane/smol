@@ -69,11 +69,18 @@ div.post-meta {
 #postsByDate, #section {
   list-style: none;
 }
+#postsByDate li, #section li {
+  display: flex;
+}
 #postsByDate .date {
   width: 60px;
+  margin-right: 16px;
+  white-space: nowrap;
 }
 #section .date {
   width: 100px;
+  margin-right: 16px;
+  white-space: nowrap;
 }
 #postsByDate div, #postsInOneGroup div, #section div {
   display: inline-block;
