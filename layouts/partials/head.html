@@ -12,8 +12,10 @@
       <title>{{ . }}</title>
     {{ end }}
   {{ end }}
+  <link href="{{ "fonts/symbols-nerd-font/symbols-nerd-font.css" | relURL }}" rel="stylesheet" />
+  <link href="{{ "fonts/jetbrains-mono/jetbrains-mono.css" | relURL }}" rel="stylesheet" />
+  <link href="{{ "fonts/BlinkMacSystemFont/BlinkMacSystemFont.css" | relURL }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/reset.css" | relURL }}"/>
-  <link rel="stylesheet" href="{{ "css/font.css" | relURL }}"/>
   <link rel="stylesheet" href="{{ "css/smigle.css" | relURL }}"/>
   {{ range .Site.Params.customStylesheets }}
     <link rel="stylesheet" href="{{ . | relURL }}"/>

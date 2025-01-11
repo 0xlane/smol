@@ -1,5 +1,7 @@
 #root {
-  font-family: Iosevka, monospace;
+  font-family: -apple-system, "JetBrains Mono", "Symbols Nerd Font", BlinkMacSystemFont, monospace;
+  font-weight: 500;
+  font-size: 16px;
   max-width: 750px;
   margin: 0 auto;
   padding: 10px;
@@ -70,7 +72,7 @@ div.post-meta {
   width: 60px;
 }
 #section .date {
-  width: 90px;
+  width: 100px;
 }
 #postsByDate div, #postsInOneGroup div, #section div {
   display: inline-block;

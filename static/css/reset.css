@@ -9,7 +9,7 @@ html {
   --visitedcolor: #551a8b;
   --precolor: hsl(224, 10%, 23%);
   --prebgcolor: hsl(224, 20%, 94%);
-  --tablebcolor: #c6c6c6;
+  --bordercolor: #c6c6c6;
   --thbgcolor: #dbedf3c2;
   --troddcolor: #fff;
   --trevencolor: #f8f8f8;
@@ -23,7 +23,7 @@ html {
      --visitedcolor: #ae5ee0;
      --precolor: #fff;
      --prebgcolor: #383838;
-     --tablebcolor: #4f4f4f;
+     --bordercolor: #4f4f4f;
      --thbgcolor: #222;
      --troddcolor: #222;
      --trevencolor: #222;
@@ -53,18 +53,27 @@ a:active {
 h1,h2,h3 {
   line-height: 1.2;
 }
-p > code, li > code {
+code {
+  font-family: "JetBrains Mono", "Symbols Nerd Font", BlinkMacSystemFont, monospace;
+  font-size: 14px;
+}
+p > code, li > code, strong > code {
   color: var(--precolor);
   background: var(--prebgcolor);
   margin-block: -.125rem;
-  padding: .125rem .375rem;
+  padding: .105rem .275rem;
   font-weight: bold;
+  font-size: 13px;
+  border: 1px solid var(--bordercolor);
+  border-radius: 3px;
 }
 pre {
   color: var(--precolor);
   background: var(--prebgcolor);
   padding: 24px;
   overflow-x: auto;
+  border: 1px solid var(--bordercolor);
+  border-radius: 3px;
 }
 .center  {
   display: block;
@@ -91,21 +100,21 @@ article {
 article .content table {
   border-collapse: collapse;
   width:100%;
-  border:1px solid var(--tablebcolor) !important;
+  border:1px solid var(--bordercolor) !important;
   margin-bottom:20px;
 }
 article .content table th {
   border-collapse: collapse;
-  border-right:1px solid var(--tablebcolor) !important;
-  border-bottom:1px solid var(--tablebcolor) !important;
+  border-right:1px solid var(--bordercolor) !important;
+  border-bottom:1px solid var(--bordercolor) !important;
   background-color:var(--thbgcolor) !important; 
   padding:5px 9px;
   text-align:center;
 }
 article .content table td {
   border-collapse: collapse;
-  border-right:1px solid var(--tablebcolor) !important;
-  border-bottom:1px solid var(--tablebcolor) !important; 
+  border-right:1px solid var(--bordercolor) !important;
+  border-bottom:1px solid var(--bordercolor) !important; 
   padding:5px 9px;
   text-align:center;
   word-break: break-all;
