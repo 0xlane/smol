@@ -73,12 +73,12 @@ div.post-meta {
   display: flex;
 }
 #postsByDate .date {
-  width: 60px;
+  min-width: 60px;
   margin-right: 16px;
   white-space: nowrap;
 }
 #section .date {
-  width: 100px;
+  min-width: 100px;
   margin-right: 16px;
   white-space: nowrap;
 }
