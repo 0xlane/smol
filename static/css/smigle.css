@@ -9,6 +9,7 @@
 }
 header {
   font-family: -apple-system, system-ui, "JetBrains Mono", "Symbols Nerd Font", BlinkMacSystemFont, monospace;
+  justify-items: center;
 }
 #brand {
   display: flex;
@@ -39,6 +40,9 @@ footer {
 header nav {
   margin: 15px 0;
 }
+header nav .sep {
+  margin: 0 3.5px;
+}
 h1.title {
   margin: 1.3rem 0 0 0;
 }
@@ -54,6 +58,9 @@ div.post-meta {
 @media (min-width: 768px) {
   #root {
     margin-top: 25px;
+  }
+  header {
+    justify-items: unset;
   }
   #brand {
     flex-direction: row;

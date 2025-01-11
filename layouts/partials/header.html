@@ -14,7 +14,7 @@
   <nav>
     {{ with .Site.Menus.main }}
       {{ range $index, $value := . }}
-        {{ if $index }} | {{ end }}
+        {{ if $index }}<span class="sep">|</span>{{ end }}
         <a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>
       {{ end }}
     {{ end }}
