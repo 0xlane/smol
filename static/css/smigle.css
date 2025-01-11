@@ -123,3 +123,7 @@ article .content p, article .content li {
   margin-top: 15px;
   border: dotted;
 }
+
+a {
+  overflow-wrap: anywhere;
+}
