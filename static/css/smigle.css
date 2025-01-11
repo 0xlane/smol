@@ -7,6 +7,9 @@
   padding: 10px;
   overflow-wrap: anywhere;
 }
+header {
+  font-family: -apple-system, "JetBrains Mono", "Symbols Nerd Font", BlinkMacSystemFont, monospace;
+}
 #brand {
   display: flex;
   flex-direction: column;
