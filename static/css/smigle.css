@@ -31,7 +31,7 @@ header {
   font-size: 20px;
   font-weight: normal;
 }
-#brand .icon {
+#brand .favicon-icon {
   width: 75px;
 }
 footer {
@@ -41,8 +41,18 @@ header nav {
   margin: 15px 0;
   text-align: center;
 }
-header nav .sep {
+header nav .pc-nav {
+  display: none;
+}
+header nav .pc-nav .sep {
   margin: 0 3.5px;
+}
+header nav .phone-nav span {
+  margin-right: 10px;
+  font-size: 20px;
+}
+header nav .phone-nav:last-child {
+  margin-right: 0;
 }
 h1.title {
   margin: 1.3rem 0 0 0;
@@ -78,6 +88,12 @@ div.post-meta {
   }
   header nav {
     text-align: unset;
+  }
+  header nav .pc-nav {
+    display: unset;
+  }
+  header nav .phone-nav {
+    display: none;
   }
 }
 #postsByDate, #section {

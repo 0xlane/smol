@@ -1,8 +1,8 @@
 <header>
   <div id="brand">
-    <a class="icon-link" href="{{ .Site.BaseURL }}">
+    <a class="favicon-icon-link" href="{{ .Site.BaseURL }}">
       <img
-        class="icon"
+        class="favicon-icon"
         src="{{ default "images/brandIcon.svg" .Site.Params.brandIconFile | relURL }}"
       />
     </a>
@@ -12,12 +12,21 @@
     </div>
   </div>
   <nav>
+    <div class="pc-nav">
     {{ with .Site.Menus.main }}
       {{ range $index, $value := . }}
         {{ if $index }}<span class="sep">|</span>{{ end }}
         <a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>
       {{ end }}
     {{ end }}
+    </div>
+    <div class="phone-nav">
+      {{- with .Site.Menus.main }}
+        {{- range $index, $value := . }}
+        <a href="{{ .URL | relURL }}"><b><span class="icon iconfont {{ .Pre }}"></span></b></a>
+        {{ end -}}
+      {{ end -}}
+    </div>
   </nav>
   <hr />
 </header>
