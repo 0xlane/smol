@@ -4,4 +4,5 @@ layout: feedback
 outputs:
   - "html"
 nosearch: true
+norss: true
 ---

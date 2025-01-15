@@ -5,4 +5,5 @@ outputs:
  - "html"
  - "json"
 nosearch: true
+norss: true
 ---
