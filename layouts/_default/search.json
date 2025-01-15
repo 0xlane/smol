@@ -1,0 +1,20 @@
+{{ define "main" }}
+{
+    {{- $mscratch := newScratch -}}
+    {{- $mscratch.Add "articles" slice -}}
+    {{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+    {{- $pages := where $pages ".Params.nosearch" "!=" "true" -}}
+    {{- range $pages }}
+        {{- $mscratch.Add "articles" (dict
+            "title" .Title
+            "date" (.Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt))
+            "tags" (sort (or .Params.tags slice))
+            "categories" (sort (or .Params.categories slice))
+            "summary" (or .Params.description .Summary)
+            "keywords" (or .Params.keywords slice)
+            "subtitle" .Params.subtitle
+            "link" .RelPermalink) -}}
+    {{ end -}}
+    "pages": {{ $mscratch.Get "articles" | jsonify }}
+}
+{{ end }}

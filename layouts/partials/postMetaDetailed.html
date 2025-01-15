@@ -3,7 +3,7 @@
     <span>Posted on</span>
     <time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time>
     {{ with .Params.categories }}<span>in</span>{{ end }}
-    {{ range $key, $value := .Params.categories -}}
+    {{ range $key, $value := (sort (or .Params.categories slice)) -}}
       {{- if $key }}, {{ end }}
       <a href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
     {{- end }}
@@ -19,7 +19,7 @@
   {{ with .Params.tags }}
     <div>
       <span>Tags:</span>
-      {{ range $key, $value := . }}
+      {{ range $key, $value := (sort .) }}
         {{- if $key }}, {{ end }}
         <a href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
       {{- end }}

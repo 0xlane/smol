@@ -32,7 +32,7 @@
     <div class="phone-nav">
       {{- with .Site.Menus.main }} {{- range $index, $value := . }}
       <a href="{{ .URL | relURL }}"
-        ><b><span class="icon iconfont {{ .Pre }}"></span></b
+        ><b>{{- if strings.Contains .Pre "icon" }}<span class="icon iconfont {{ .Pre }}"></span>{{ else }}<span class="icon">{{ .Pre }}</span>{{ end -}}</b
       ></a>
       {{ end -}} {{ end -}}
     </div>
